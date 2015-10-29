@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cookies</title>
+	<link rel="stylesheet" type="text/css" href="cookies.css">
+	<script type="text/javascript" src="/cookies.js"></script>
+	<script language="JavaScript">
+		function cookieSet(form) {
+			if (form.username.value==="user1" && form.password.value==="1234"){
+    			var name = form.username.value;
+    			Cookies.set('username', name, {expires: 120});
+    		}
+		}
+	</script>
+</head>
+<body>
+<h1>Test Form</h1>
+<div id="main">
+<form name="form" action="" method="GET">  
+	<br>
+	<div id="field">Username:</div>
+	&#42;<input type="text" name="username" id="username">  
+	<div id="field">Password:</div>  
+	&#42;<input type="password" name="password" id="password"> <br><p>&#42; Required</p>
+	<input type="submit" value="Submit" onClick="cookieSet(this.form)">
+</form>
+<br>
+</div>
+
+<br>
+<div id="instructions">
+	<h3>Instructions:</h3>
+	<ul>
+		<li>Username is user1. Password is 1234.</li>
+		<li>jQuary will check for blank or wrong submissions in either field and will give an appropriate response.</li>
+		<li>Only if both username and password are correct, it will let you pass to the next stage.</li>
+	</ul>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>
